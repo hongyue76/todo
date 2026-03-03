@@ -35,7 +35,7 @@ class TodoUpdate(BaseModel):
     category: Optional[str] = None
     parent_id: Optional[int] = None
 
-@app.post("/ai/auth/login")
+@app.get("/ai/auth/login")
 async def ai_login(username: str, password: str):
     """AI工具登录接口"""
     if username in users_db and users_db[username] == password:
